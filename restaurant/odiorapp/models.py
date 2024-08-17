@@ -24,4 +24,4 @@ class OrderRequest(models.Model):
     email = models.EmailField()
     order_item = models.CharField(max_length=150, choices=item_choices)
     order_quantity = models.CharField(max_length=150, choices=item_quantities)
-    special_request = models.TextField()
+    special_request = models.TextField(null=True, blank=True)
