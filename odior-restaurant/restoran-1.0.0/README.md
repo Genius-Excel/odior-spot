@@ -1,2 +1,0 @@
-# Odior Spot
-# Frontend
