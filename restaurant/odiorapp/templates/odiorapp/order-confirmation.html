@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            color: #333;
+        }
+        .email-container {
+            max-width: 600px;
+            margin: 40px auto;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .email-header {
+            background-color: #007bff;
+            color: #ffffff;
+            padding: 20px;
+            text-align: center;
+        }
+        .email-body {
+            padding: 20px;
+        }
+        .email-body h2 {
+            color: #007bff;
+            font-size: 24px;
+        }
+        .order-details {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        .order-details th, .order-details td {
+            padding: 12px;
+            border: 1px solid #dddddd;
+            text-align: left;
+        }
+        .order-details th {
+            background-color: #f8f8f8;
+            font-weight: bold;
+        }
+        .customer-info {
+            margin-top: 20px;
+        }
+        .customer-info p {
+            margin: 5px 0;
+        }
+        .email-footer {
+            background-color: #f8f8f8;
+            color: #666;
+            text-align: center;
+            padding: 10px;
+            font-size: 12px;
+            border-top: 1px solid #dddddd;
+        }
+    </style>
+</head>
+<body>
+    <div class="email-container">
+        <div class="email-header">
+            <h1>Order Confirmation</h1>
+        </div>
+        <div class="email-body">
+            <h2>Hello {{ customer_name }},</h2>
+            <p>Thank you for your order! Here are the details:</p>
+
+            <table class="order-details">
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Quantity</th>
+                        <th>Special Request</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Repeat this TR block for each item in the order -->
+                    <tr>
+                        <td>{{ order_item }}</td>
+                        <td>{{ order_quantity }}</td>
+                        <td>{{ special_request }}</td>
+                    </tr>
+                    <!-- End repeat -->
+                </tbody>
+            </table>
+
+            <div class="customer-info">
+                <h3>Customer Information</h3>
+                <p><strong>Name:</strong> {{ customer_name }}</p>
+                <p><strong>Email:</strong> {{ email }}</p>
+            </div>
+
+            <p>If you have any questions or need further assistance, please feel free to contact us.</p>
+
+            <p>Best regards,</p>
+            <p>The Odiorspot Team</p>
+        </div>
+        <div class="email-footer">
+            <p>&copy; 2024 Odiorspot. All rights reserved.</p>
+        </div>
+    </div>
+</body>
+</html>
