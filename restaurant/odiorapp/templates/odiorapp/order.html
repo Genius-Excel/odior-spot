@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<!-- Order Start -->
+<div class="container-xxl py-5 px-0 wow fadeInUp d-flex justify-content-center align-items-center" data-wow-delay="0.1s" style="min-height: 100vh;">
+    <div class="col-md-6 bg-dark d-flex align-items-center">
+        <div class="p-5 wow fadeInUp" data-wow-delay="0.2s">
+            <h5 class="section-title ff-secondary text-start text-primary fw-normal">Order</h5>
+            <h1 class="text-white mb-4">Order Online</h1>
+            <form method="POST">
+                {% csrf_token %}
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            {{form.customer_name}}
+                            <label for="name">Your Name</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            {{form.email}}
+                            <label for="email">Your Email</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating date" id="date3" data-target-input="nearest">
+                            {{form.order_item}}
+                            <label for="order-item">Order Item</label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="form-floating">
+                            {{form.order_quantity}}
+                            <label for="select1">Quantity</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <div class="form-floating">
+                            {{form.special_request}}
+                            <label for="message">Special Request</label>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <button class="btn btn-primary w-100 py-3" type="submit">Place Order</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<!--Order End-->
+
+{% endblock content %}
