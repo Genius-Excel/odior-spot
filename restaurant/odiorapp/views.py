@@ -71,7 +71,7 @@ def order_placing(request):
                 client.send(mail)
 
                 form.save()
-                messages.success(request, f"Email has been sent successfuly to {email}")
+                # messages.success(request, f"Email has been sent successfuly to {email}")
                 return redirect('order-success')
             except socket.gaierror:
                 messages.error(request, 'An error occured while trying place an order, kindly check your internet connection.')
