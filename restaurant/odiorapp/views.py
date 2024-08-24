@@ -7,7 +7,7 @@ from django.contrib import messages
 # Create your views here.
 
 def sample(request):
-    return render(request, 'odiorapp/sample.html')
+    return render(request, 'odiorapp/home.html')
 
 
 def book_test(request):
@@ -16,7 +16,7 @@ def book_test(request):
         form = OrderRequestForm(request.POST)
         if form.is_valid():
             form.save()
-            messages.success(request, f"Favour you are a Genius. Forget about the motherfucking recruiters")
+            messages.success(request, f"Excel you are a Genius. Forget about the motherfucking recruiters")
         else:
             messages.error(request, "An error occured.")
     else:
